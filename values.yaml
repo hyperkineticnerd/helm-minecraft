@@ -1,0 +1,57 @@
+global:
+  image: itzg/minecraft-server:java17
+
+minecraft:
+  version: 1.19.2
+  motd: "[HyperKineticNerd] Vanilla"
+  memory: 4G
+  nodePort: 30000
+  externalPort: 25565
+  serverPort: 25565
+  rconPort: 25575
+  nodePortEnable: true
+
+modpack:
+  commonLabels:
+    app: game
+    game: minecraft
+
+  extraEnv: {}
+
+  slug: atm8
+  slug_id: all-the-mods-8
+
+  version: v1.0.13
+  version_id: 4415465
+
+  forge:
+    enabled: false
+    version: 43.2.3
+
+  fabric:
+    enabled: false
+    version: latest
+
+  feed_the_beast:
+    enabled: false
+
+  curseforge:
+    enabled: false
+    auto: false
+    page_url: ""
+
+storage:
+  enabled: true
+  capacity: 10Gi
+  access: ReadWriteMany
+  nfs:
+    enabled: false
+    server: ''
+    path: ''
+  pvc:
+    storageClass: ""
+    enabled: false
+
+deployment:
+  resources: {}
+  securityContext: {}
