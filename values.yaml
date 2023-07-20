@@ -38,6 +38,7 @@ modpack:
   curseforge:
     enabled: false
     auto: false
+    api_key: ""
     page_url: ""
 
 storage:

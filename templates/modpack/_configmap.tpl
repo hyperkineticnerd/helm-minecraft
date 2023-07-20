@@ -44,6 +44,9 @@ CF_SERVER_MOD: {{ .Values.modpack.curseforge.page_url }}
 TYPE: AUTO_CURSEFORGE
 CF_SLUG: {{ .Values.modpack.slug_id | quote }}
 CF_FILE_ID: {{ .Values.modpack.version_id | int64 | quote }}
+{{- if .Values.modpack.curseforge.api_key }}
+CF_API_KEY: {{ .Values.modpack.curseforge.api_key }}
+{{- end }}
 {{/*- if .Values.modpack.curseforge.page_url }}
 CF_PAGE_URL: {{ .Values.modpack.curseforge.page_url }}
 {{- end */}}

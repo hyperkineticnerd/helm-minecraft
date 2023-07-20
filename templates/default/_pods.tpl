@@ -22,11 +22,11 @@
 {{ toYaml .Values.deployment.resources }}
 {{- else -}}
 requests:
-  cpu: "3"
-  memory: 8Gi
-limits:
-  cpu: "6"
+  cpu: "4"
   memory: 12Gi
+limits:
+  cpu: "8"
+  memory: 24Gi
 {{- end -}}
 {{- end -}}
 
