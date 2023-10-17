@@ -56,3 +56,6 @@ storage:
 deployment:
   resources: {}
   securityContext: {}
+
+service:
+  annotations: {}

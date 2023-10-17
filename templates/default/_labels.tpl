@@ -26,9 +26,9 @@ modpack: {{ .Values.modpack.slug }}
 
 {{- define "minecraft.default.pod.labels" -}}
 {{- include "minecraft.default.pod.selectors" . }}
-modpack-id: {{ .Values.modpack.slug_id | int64 | quote }}
 {{- include "minecraft.labels.modpack.type" . }}
 {{- include "minecraft.labels.modpack.source" . }}
+modpack-id: {{ .Values.modpack.slug_id | int64 | quote }}
 modpack-version: {{ .Values.modpack.version }}
 modpack-version-id: {{ .Values.modpack.version_id | int64 | quote }}
 {{- end -}}

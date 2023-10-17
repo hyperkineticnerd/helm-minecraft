@@ -8,8 +8,8 @@ data:
   VERSION: {{ .Values.minecraft.version | quote }}
   MEMORY: {{ .Values.minecraft.memory | quote }}
   MOTD: {{ .Values.minecraft.motd | quote }}
-  WHITELIST_FILE: /extras/whitelist.json
-  OPS_FILE: /extras/ops.json
+  # WHITELIST_FILE: /extras/whitelist.json
+  # OPS_FILE: /extras/ops.json
   {{- include "minecraft.modpack.env" . | nindent 2 }}
   {{- include "minecraft.modpack.extraEnv" . | nindent 2 }}
 

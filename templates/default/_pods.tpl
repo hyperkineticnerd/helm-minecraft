@@ -11,7 +11,7 @@
 
 
 {{- define "minecraft.default.pod.ports" -}}
-- name: game
+- name: minecraft
   containerPort: 25565
   protocol: TCP
 {{- end -}}
