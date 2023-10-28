@@ -4,12 +4,22 @@
 {{- else if .Values.modpack.fabric }}
 {{- include "minecraft.modpack.fabric" . }}
 {{- end }}
+{{- if .Values.modpack.level -}}
+{{- include "minecraft.modpack.level" . }}
+{{- end -}}
 {{- end -}}
 
 
 {{- define "minecraft.modpack.extraEnv" -}}
 {{- if .Values.modpack.extraEnv }}
 {{- toYaml .Values.modpack.extraEnv }}
+{{- end }}
+{{- end -}}
+
+
+{{- define "minecraft.modpack.level" -}}
+{{- if .Values.modpack.level }}
+LEVEL: {{ .Values.modpack.level }}
 {{- end }}
 {{- end -}}
 
