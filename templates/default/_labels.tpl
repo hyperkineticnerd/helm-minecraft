@@ -1,21 +1,3 @@
-{{- define "minecraft.labels.modpack.type" -}}
-{{- if .Values.modpack.forge }}
-modpack-type: Forge
-{{- else if .Values.modpack.fabric }}
-modpack-type: Fabric
-{{- end }}
-{{- end -}}
-
-
-{{- define "minecraft.labels.modpack.source" -}}
-{{- if .Values.modpack.curseforge }}
-modpack-source: CurseForge
-{{- else if .Values.modpack.feed_the_beast }}
-modpack-source: Feed-The-Beast
-{{- end }}
-{{- end -}}
-
-
 {{- define "minecraft.default.pod.selectors" -}}
 {{- with .Values.modpack.commonLabels }}
 {{- toYaml . }}

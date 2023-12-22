@@ -24,6 +24,10 @@ modpack:
   version: v1.0.13
   version_id: 4415465
 
+  modrinth:
+    enabled: false
+    loader: fabric
+
   forge:
     enabled: false
     version: 43.2.3

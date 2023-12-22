@@ -1,7 +1,9 @@
 {{- define "minecraft.modpack.env" -}}
-{{- if .Values.modpack.forge }}
+{{- if .Values.modpack.forge.enabled }}
 {{- include "minecraft.modpack.forge" . }}
-{{- else if .Values.modpack.fabric }}
+{{- else if .Values.modpack.modrinth.enabled }}
+{{- include "minecraft.modpack.modrinth" . }}
+{{- else if .Values.modpack.fabric.enabled }}
 {{- include "minecraft.modpack.fabric" . }}
 {{- end }}
 {{- if .Values.modpack.level -}}
@@ -79,4 +81,12 @@ TYPE: FABRIC
 - name: minecraft-server-files
   configMap:
     name: {{ .Values.modpack.slug }}-server-files
+{{- end -}}
+
+
+{{- define "minecraft.modpack.modrinth" -}}
+TYPE: MODRINTH
+MODRINTH_LOADER: {{ .Values.modpack.modrinth.loader | quote }}
+MODRINTH_MODPACK: {{ .Values.modpack.slug_id | quote }}
+MODRINTH_VERSION: {{ .Values.modpack.version_id | quote }}
 {{- end -}}

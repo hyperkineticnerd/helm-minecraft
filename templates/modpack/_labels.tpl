@@ -1,17 +1,19 @@
 {{- define "minecraft.labels.modpack.type" -}}
-{{- if .Values.modpack.forge }}
+{{- if .Values.modpack.forge.enabled }}
 modpack-type: Forge
-{{- else if .Values.modpack.fabric }}
+{{- else if .Values.modpack.fabric.enabled }}
 modpack-type: Fabric
 {{- end }}
 {{- end -}}
 
 
 {{- define "minecraft.labels.modpack.source" -}}
-{{- if .Values.modpack.curseforge }}
+{{- if .Values.modpack.curseforge.enabled }}
 modpack-source: CurseForge
-{{- else if .Values.modpack.feed_the_beast }}
+{{- else if .Values.modpack.feed_the_beast.enabled }}
 modpack-source: Feed-The-Beast
+{{- else if .Values.modpack.modrinth.enabled }}
+modpack-source: Modrinth
 {{- end }}
 {{- end -}}
 
